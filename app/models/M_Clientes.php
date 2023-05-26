@@ -10,10 +10,11 @@ class M_Clientes extends Model {
         parent::__construct();
     }
 
-    public function get_list()
+    public function get_list(): array
     {
         $sql = 'SELECT * FROM clientes';
         $query = $this->connect->query($sql);
+
         return $query->fetchAll();
     }
 

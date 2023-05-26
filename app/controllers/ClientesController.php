@@ -7,7 +7,7 @@ use app\models\M_Clientes;
 
 class ClientesController extends Controller {
  
-    public function index()
+    public function index(): void
     {
         $model_clientes = new M_Clientes;
         $array_data['clientes'] = $model_clientes->get_list();

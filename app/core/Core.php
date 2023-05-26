@@ -11,7 +11,7 @@ class Core {
         $this->dismount_url();
     }
 
-    public function run()
+    public function run(): void
     {
         $name_controller = $this->get_controller();
         $new_controller = new $name_controller;
@@ -19,7 +19,7 @@ class Core {
         call_user_func_array([$new_controller, $this->get_method()], $this->get_parameters());
     }
 
-    private function dismount_url()
+    private function dismount_url(): void
     {
         $url = explode('index.php', $_SERVER["PHP_SELF"]);
         $url = end($url);
@@ -68,5 +68,4 @@ class Core {
         return $this->parameters;
     }
     
-
 }
