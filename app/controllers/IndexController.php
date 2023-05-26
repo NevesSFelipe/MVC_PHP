@@ -1,12 +1,14 @@
 <?php
 
 namespace app\controllers;
+use app\core\Controller;
 
-class IndexController {
+class IndexController extends Controller {
  
     public function index()
     {
-        echo 'controller default';
+        $array_data['nome'] = 'Felipe Neves';
+        $this->load_view('home/index', $array_data);
     }
 
 }

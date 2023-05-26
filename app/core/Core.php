@@ -56,11 +56,11 @@ class Core {
 
     public function get_method(): string
     {
-        if(method_exists($this->get_controller(), $this->method)) {
-            return $this->method;
+        if(empty($this->method) || !method_exists($this->get_controller(), $this->method)) {
+            return METHOD_DEFAULT;
         }
 
-        return METHOD_DEFAULT;
+        return $this->method;
     }
 
     public function get_parameters(): array
